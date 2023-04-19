@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./view/header/Header";
+import Card from "./view/card/Card";
+import options_dialog from "./view/options_dialog/options_dialog";
+import { useState } from "react";
 
 function App() {
+  const [options, setOptions] = useState({
+    backgroundColor: "#2311",
+    fontSize: "12",
+    showBorder: false,
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header options={options} setOptions={setOptions} />
+      <Card options={options} />
     </div>
   );
 }
