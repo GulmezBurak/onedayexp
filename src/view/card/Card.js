@@ -1,28 +1,28 @@
-export default function Card({
-  options,
-  fontSize,
-  backgroundColor,
-  showBorder,
-}) {
+import { observer } from "mobx-react-lite";
+import { useStore } from "../options_dialog/store";
+
+const Card = () => {
+  const { configStore } = useStore();
+  console.log("configStore", configStore);
   const cardStyle = {
     margin: "50px",
     borderStyle: "solid",
     borderColor: "black",
-    borderWidth: showBorder ? "2px" : "0",
+    borderWidth: configStore.showBorder ? "2px" : "0",
     color: "black",
 
-    backgroundColor: options.backgroundColor,
+    backgroundColor: configStore.backgroundColor,
     width: "300px",
     height: "auto",
     padding: "10px",
     borderRadius: "10px",
-    fontSize: options.fontSize,
-    showBorder: options.showBorder,
+    fontSize: configStore.fontSize,
+    showBorder: configStore.showBorder,
   };
-  if (options.showBorder === false) {
+  if (configStore.showBorder === false) {
     cardStyle.borderWidth = "0";
   } else cardStyle.borderWidth = "2px";
-
+  console.log("");
   return (
     <div style={cardStyle}>
       <p>
@@ -36,4 +36,6 @@ export default function Card({
       </p>
     </div>
   );
-}
+};
+
+export default observer(Card);

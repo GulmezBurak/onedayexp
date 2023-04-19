@@ -1,8 +1,4 @@
 import React from "react";
-import { Modal } from "react-bootstrap";
-export default function Close_button() {
-  return;
-  <div>
-    <Modal.Header closeButton></Modal.Header>
-  </div>;
+export default function Close_button({ handlePopupClose }) {
+  return <div onClick={handlePopupClose}>X</div>;
 }
