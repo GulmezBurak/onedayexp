@@ -3,8 +3,9 @@ import Card from "./view/card/Card";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Header />
+      <br />
       <Card />
     </div>
   );

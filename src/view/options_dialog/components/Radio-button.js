@@ -12,7 +12,7 @@ const Radiobutton = ({ label, value, fontSize, backgroundColor }) => {
     if (backgroundColor !== undefined) {
       configStore.backgroundColor = e.target.value;
     }
-    configStore.customStyleActive = false; // customStyleActive değerini güncelle
+    configStore.customStyleActive = false;
   });
 
   let checked;

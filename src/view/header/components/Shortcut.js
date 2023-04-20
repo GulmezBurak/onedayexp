@@ -9,14 +9,12 @@ const Shortcut = () => {
   const [defaultConfig, setDefaultConfig] = useState({});
 
   const handleClick = () => {
-    // varsayılan değerleri sakla
     setDefaultConfig({
       fontSize: configStore.fontSize,
       backgroundColor: configStore.backgroundColor,
       showBorder: configStore.showBorder,
     });
 
-    // otomatik değerleri ayarla
     configStore.fontSize = 12;
     configStore.backgroundColor = "grey";
     configStore.showBorder = true;
@@ -33,20 +31,28 @@ const Shortcut = () => {
   };
 
   return (
-    <Navbar bg="light" variant="light">
-      <Container>
-        <Nav>
-          <input
-            onChange={handleCheckboxChange}
-            onClick={handleClick}
-            style={{ margin: "18px " }}
-            type="checkbox"
-            checked={configStore.customStyleActive}
-          />
-          <label>Custom Style</label>
-        </Nav>
-      </Container>
-    </Navbar>
+    <div style={{ display: "flex", alignItems: "center" }}>
+      <Navbar bg="light" variant="light">
+        <Container>
+          <Nav>
+            <label style={{ marginRight: "10px" }}>Custom Style</label>
+            <div>
+              <input
+                onChange={handleCheckboxChange}
+                onClick={handleClick}
+                style={{
+                  verticalAlign: "middle",
+                  marginRight: "5px",
+                  transform: "scale(1.5)",
+                }}
+                type="checkbox"
+                checked={configStore.customStyleActive}
+              />
+            </div>
+          </Nav>
+        </Container>
+      </Navbar>
+    </div>
   );
 };
 

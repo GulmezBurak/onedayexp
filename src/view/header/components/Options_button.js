@@ -48,7 +48,7 @@ const Options_buttons = () => {
   };
 
   return (
-    <div>
+    <div style={{ float: "right" }}>
       <Navbar bg="light" variant="light">
         <Container>
           <Nav>
